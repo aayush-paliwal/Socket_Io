@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.io Demo</title>
+</head>
+<body>
+    <h1>Socket.io</h1>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+        const socket = io();
+
+        socket.on("connect", () => {
+            console.log("Connected to client ✅");
+
+            // Disconnect from server after 5s
+            setTimeout(() => {
+                socket.disconnect();
+            }, 5000)
+        });
+
+        socket.on("disconnect", () => {
+            console.log("Disconnected from client ❌");
+        })
+
+    </script>
+</body>
+</html>
