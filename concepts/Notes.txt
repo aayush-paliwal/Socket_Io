@@ -16,3 +16,7 @@
   establishes a connection with the server. The callback function will be called/invoked whenever this event occurs, and it will receive a
   socket object representing the connection to the client.
 - Similarly, we can use socket.on on the socket object to listen for events specific to that individual client connection.
+
+// Emitting events
+- Emitting events allows us to send data from one side (client or server) to the other.
+- It's a fundamental feature of real-time communication.

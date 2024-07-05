@@ -21,6 +21,13 @@ console.log(_dirname);
 io.on("connection", (client) => {
     console.log("User Connected to server ✅");
 
+    // Emit a 'message' event to the client. This emit method allows us to send the data.
+    client.emit("message", "Server is sending data to the client!");
+
+    client.on("new message", (msg) => {
+        console.log(msg);
+    })
+
     // Here, client is the specific client that we are disconnecting from
     client.on("disconnect", () => {
         console.log("User Disconnected from server ❌")

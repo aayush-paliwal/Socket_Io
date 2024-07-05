@@ -16,10 +16,17 @@
             console.log("Connected to client ✅");
 
             // Disconnect from server after 5s
-            setTimeout(() => {
-                socket.disconnect();
-            }, 5000)
+            // setTimeout(() => {
+            //     socket.disconnect();
+            // }, 5000)
         });
+
+        // This on method allows us to catch or receive the data.
+        socket.on("message", (message) => {
+            console.log(message);
+        })
+
+        socket.emit("new message", "Client sending data to server")
 
         socket.on("disconnect", () => {
             console.log("Disconnected from client ❌");
