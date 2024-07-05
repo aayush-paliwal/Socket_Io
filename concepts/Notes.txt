@@ -20,3 +20,6 @@
 // Emitting events
 - Emitting events allows us to send data from one side (client or server) to the other.
 - It's a fundamental feature of real-time communication.
+
+
+# Install socket.io-client to work with react.js
